@@ -9,7 +9,7 @@ module RailsAfipSicoss
     end
 
     def build
-      @@settlements_periods.each do |employee_settlement|
+      @settlements_periods.each do |employee_settlement|
         append_record Empleado.new(employee_settlement)
       end
     end

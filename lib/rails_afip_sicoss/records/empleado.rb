@@ -108,8 +108,8 @@ module RailsAfipSicoss
       #
       @sueldo_adicionales = employee_settlement[:sueldo_adicionales] # Sueldo Bruto Basico
       @sac = employee_settlement[:sac] || 0 # Aguinaldo
-      @adicionales = employee_settlement[:adicionales] # Adicional Sueldo Basico
-      @premios = employee_settlement[:premios] # Premios
+      @adicionales = employee_settlement[:adicionales] || 0 # Adicional Sueldo Basico
+      @premios = employee_settlement[:premios] || 0 # Premios
       @vacaciones = employee_settlement[:vacaciones] || 0 # Vacaciones
       @no_remunerativo = employee_settlement[:no_remunerativo] || 0 # No Remunerativo
       @incremento_salarial = employee_settlement[:incremento_salarial] || 0 # Incremento Salarial Solidario
