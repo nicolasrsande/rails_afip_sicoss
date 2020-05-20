@@ -53,7 +53,7 @@ module RailsAfipSicoss
     field :vacaciones, 12, '308-319', :numeric_float_l
     field :dias_trabajdos, 9, '320-328', :numeric_float_l
     field :remuneracion_5, 12, '329-340', :numeric_float_l
-    field :trabajador_convencionado, 1, '341-341', :numeric
+    field :trabajador_convencionado, 1, '341-341', :alphanumeric
     field :remuneracion_6, 12, '342-353', :numeric_float_l
     field :tipo_operacion, 1, '354-354', :numeric
     field :adicionales, 12, '355-366', :numeric_float_l
@@ -88,7 +88,7 @@ module RailsAfipSicoss
       @modalidad_contratacion = employee_settlement[:modalidad_contratacion] || 8
       @codigo_obra_social = employee_settlement[:codigo_obra_social]
       @cantidad_adherentes = employee_settlement[:cantidad_adherentes] || 0
-      @provincia_localidad = employee_settlement[:provincia_localidad] || 'Bueos Aires - CABA'
+      @provincia_localidad = employee_settlement[:provincia_localidad] || 'Buenos Aires - CABA'
       @trabajador_convencionado = employee_settlement[:trabajador_convencionado] || 'F'
       @scvo = employee_settlement[:scvo] || 'T'
       @codigo_siniestrado = employee_settlement[:codigo_siniestrado] || 0
