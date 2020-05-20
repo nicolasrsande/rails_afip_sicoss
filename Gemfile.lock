@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_afip_sicoss (1.0)
+    rails_afip_sicoss (1.1)
       fixy
 
 GEM
