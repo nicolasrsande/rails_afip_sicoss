@@ -25,7 +25,7 @@ module RailsAfipSicoss
     field :cantidad_adherentes, 2, '68-69', :numeric
     field :remuneracion_total, 12, '70-81', :numeric_float_l
     field :remuneracion_1, 12, '82-93', :numeric_float_l
-    field :asignaciones_familiares_pagadas, 9, '94-102', :numeric_float_l
+    field :asig_familiares_pagadas, 9, '94-102', :numeric_float_l
     field :importe_aporte_voluntario, 9, '103-111', :numeric_float_l
     field :importe_adicional_os, 9, '112-120', :numeric_float_l
     field :importe_exedente_aportes_ss, 9, '121-129', :numeric_float_l
@@ -131,7 +131,7 @@ module RailsAfipSicoss
       @remuneracion_11 = employee_settlement[:remuneracion_11] || @incremento_salarial # Contribuciones Dcto 14/20 PAMI, Fondo Nacional de Empleo y Asig. Familiares (Incremento Solidario)
 
       ## Otros Adicionales
-      @asignaciones_familiares_pagadas = employee_settlement[:asignaciones_familiares_pagadas] || 0
+      @asig_familiares_pagadas = employee_settlement[:asignaciones_familiares_pagadas] || 0
       @importe_aporte_voluntario = employee_settlement[:importe_aporte_voluntario] || 0
       @importe_adicional_os = employee_settlement[:importe_adicional_os] || 0
       @importe_exedente_aportes_ss = employee_settlement[:importe_exedente_aportes_ss] || 0
@@ -158,8 +158,8 @@ module RailsAfipSicoss
 
     # Define la detraccion Ley a realizar segun si es el peridoo de aguinaldo
     def detraccion_auto # Todo: Permitir el cambio de las variables de detraccion Ley.
-      if @sac > 0
-        10505.52
+      if @sac.positive?
+        10_505.52
       else
         7003.68
       end
