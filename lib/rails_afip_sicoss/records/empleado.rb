@@ -1,8 +1,8 @@
 module RailsAfipSicoss
 
-  class ImportacionEmpleados < Fixy::Record
+  class Empleado < Fixy::Record
     include Fixy::Formatter::Numeric
-    incude Fixy::Formatter::NumericCurrency
+    include Fixy::Formatter::NumericCurrency
     include Fixy::Formatter::Alphanumeric
 
     set_record_length 499
